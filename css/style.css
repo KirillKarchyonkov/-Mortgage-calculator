@@ -48,10 +48,12 @@ body {
 .wrapper {
     background-color: #fff;
     display: flex;
-    flex: 0 0 900px;
     border-radius: 10px;
     position: relative;
     margin: 40px auto 0;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    justify-content: center;
 }
 
 .wrapper__header {
@@ -66,6 +68,7 @@ body {
 .range {
     padding: 20px 25px 40px;
     width: 400px;
+    justify-content: center;
 }
 .range__header  {
 
@@ -241,4 +244,15 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 0;
     right: 0;
     font-weight: 700;
+}
+
+@media(max-width:900px) {
+    .wrapper__header {
+        
+    }
+}
+
+
+@media(max-width:767px) {
+   
 }
