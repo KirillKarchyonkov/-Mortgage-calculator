@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ипотечный калькулятор</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/Group 4.ico">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="wrapper__header">Ипотечный калькулятор</div>
+    <div class="range">
+        <div class="range__box">
+            <h2 class="range__title">Стоимость недвижимости</h2>
+            <input type="number" min="200000" max="100000000" value="200000" class="range__num">
+            <div class="range__icon">₽</div>
+            <div class="range__slider">
+                <div class="range__progress"></div>
+            </div>
+            <input type="range" min="200000" max="100000000" value="200000" class="range__in">
+        </div>
+        <div class="range__box">
+            <h2 class="range__title">Первоначальный взнос</h2>
+            <input type="number" min="20000" max="100000000" value="20000" class="range__num">
+            <div class="range__icon">₽</div>
+            <div class="range__slider">
+                <div class="range__progress"></div>
+            </div>
+            <input type="range" min="20000" max="100000000" value="20000" class="range__in">
+        </div>
+        <div class="range__box">
+            <h2 class="range__title">Срок кредита</h2>
+            <input type="number" min="1" max="30" value="1" class="range__num">
+            <div class="range__icon">год</div>
+            <div class="range__slider">
+                <div class="range__progress"></div>
+            </div>
+            <input type="range" min="1" max="30" value="1" step="1" class="range__in">
+        </div>
+        <div class="range__box">
+            <h2 class="range__title">Процентная ставка</h2>
+            <input type="number" min="1" max="30" value="1" class="range__num">
+            <div class="range__icon">%</div>
+            <div class="range__slider">
+                <div class="range__progress"></div>
+            </div>
+            <input type="range" min="1" max="30" value="1" step="0.1" class="range__in">
+        </div>
+    </div>
+    <div class="info">
+        <div class="info__header">
+            <div class="info__subtitle">
+                <div class="info__credit">Кредит</div>
+                <div class="info__credit">Переплата</div>
+            </div>
+            <div class="info__bar">
+                <div class="info__green"></div>
+                <div class="info__yellow"></div>
+            </div>
+        </div>
+        <div class="info__body">
+            <div class="info__title">Результаты расчета</div>
+            <div class="info__box">
+                <div class="info__subtitle">Сумма кредита</div>
+                <div class="info__icon">₽</div>
+                <div class="info__value">180 000</div>
+            </div>
+            <div class="info__box">
+                <div class="info__subtitle">Ежемесячный платёж</div>
+                <div class="info__icon">₽</div>
+                <div class="info__value">15 082</div>
+            </div>
+            <div class="info__box">
+                <div class="info__subtitle">Рекомендуемый доход</div>
+                <div class="info__icon">₽</div>
+                <div class="info__value">20 360</div>
+            </div>
+            <div class="info__box">
+                <div class="info__subtitle">Переплата по кредиту</div>
+                <div class="info__icon">₽</div>
+                <div class="info__value">976</div>
+            </div>
+            <div class="info__box">
+                <div class="info__subtitle">Общая выплата</div>
+                <div class="info__icon">₽</div>
+                <div class="info__value">180 976</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
