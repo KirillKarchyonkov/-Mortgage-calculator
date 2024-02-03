@@ -63,7 +63,7 @@ const calculation = () => {
 
     overPayment = Math.round(totalSum - lounAmount);
 
-    recommendedIncome = Math.ceil(monthlyPayment * 1.35);
+    recommendedIncome = Math.ceil(monthlyPayment * 2);
 
     const monthlyPaymentArounded = Math.ceil(monthlyPayment);
     if (monthlyPaymentArounded < 0){
