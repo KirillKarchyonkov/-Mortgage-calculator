@@ -267,7 +267,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .wrapper {
         margin: 100px auto 0;
         flex: 1 1 500px;
-        min-height: 880px;
+        min-height: 900px;
     
     }
 }
@@ -288,14 +288,14 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .info__subtitle {
         display: flex;
-        font-size: 15px;
+        font-size: 17px;
     }
     .info__title {
         display: flex;
-        font-size: 20px;
+        font-size: 22px;
     }
     .info__box {
-        font-size: 15px;
+        font-size: 17px;
     }
     
 }
