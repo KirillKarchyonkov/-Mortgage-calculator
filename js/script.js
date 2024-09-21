@@ -26,19 +26,9 @@ const updateValue = (firstElement, secondElement, thirdElement) => {
         
             }
             else if ((firstElement === rangeNum[3]) || (firstElement === rangeIn[3])) {
-
-                    /*if (firstElement === rangeNum[3]){
-
-                        checkSample();
-                        console.log(firstElement.value.length + 'qwerty')
-                        //firstElement.value = parseFloat(firstElement.value);
-                    
-                    }*/
-
                         
                     secondElement.value = parseFloat(firstElement.value);
                     
-
             }
             else if ((firstElement === rangeNum[0]) || (firstElement === rangeNum[1])) {
 
@@ -112,9 +102,14 @@ const updateValue = (firstElement, secondElement, thirdElement) => {
             if ((firstElement.value !== '') && ((firstElement === rangeNum[0]) || (firstElement === rangeNum[1]) || (firstElement === rangeNum[2]) || (firstElement === rangeNum[3]))) {
 
                 firstElement.style.border = "1px solid #cecece";
-        
+                
             }
 
+            if ((firstElement.value >= 0) && ((firstElement === rangeIn[0]) || (firstElement === rangeIn[1]) || (firstElement === rangeIn[2]) || (firstElement === rangeIn[3]))) {
+
+                secondElement.style.border = "1px solid #cecece";
+                
+            }
 
 
             if ((parseInt(rangeNum[2].value) === 1) || (parseInt(rangeNum[2].value) === 21)) {
@@ -137,15 +132,8 @@ const updateValue = (firstElement, secondElement, thirdElement) => {
           
             thirdElement.style.width = Math.round((parseFloat(removeSpace(secondElement.value)) - parseFloat(removeSpace(secondElement.min))) / (parseFloat(removeSpace(secondElement.max)) - parseFloat(removeSpace(secondElement.min))) * 100)  + "%";
         
-            
-
             calculation();
-           /* console.log(rangeNum[3].value)
-            console.log(rangeNum[3].value.length)
-            console.log(rangeNum[3].value.toString().length)
-            console.log(rangeNum[3].value.toString()[0])
-            console.log(rangeNum[3].value.toString()[1])
-            console.log(rangeNum[3].value.charCodeAt(1))*/
+  
     });
 }
 
@@ -248,46 +236,17 @@ rangeNum[3].addEventListener('keypress', function(event) {
         isValidInput = (charCode >= 49 && charCode <= 57);
 
     }
+    else if ((rangeNum[3].value.length >= 1) && (rangeNum[3].value.length < 4)) {
+
+        isValidInput = (charCode >= 48 && charCode <= 57) || charCode === 44;
+
+    }
+    else if (rangeNum[3].value.length >= 4) {
+
+        isValidInput = false;
+
+    }
     
-    /*else if (rangeNum[3].value.length === 1) {
-
-        if (parseInt(rangeNum[3].value[0]) < 3) {
-        
-            isValidInput = (charCode >= 48 && charCode <= 57) || charCode === 44;
-
-        }
-        else if (parseInt(rangeNum[3].value[0]) === 3) {
-
-            isValidInput = ((charCode === 48) || (charCode === 44));
-        }
-        else {
-        
-            isValidInput = (charCode === 44);
-
-        }
-
-    }
-    else if (rangeNum[3].value.length === 2) {
-
-        if (rangeNum[3].value[1] === ",") {
-        
-            isValidInput = (charCode >= 49 && charCode <= 57);
-            console.log(rangeNum[3].value[1])
-
-        }
-        else {
-        
-            isValidInput = (charCode === 44);
-            console.log('1')
-
-        }
-        
-    }
-    else if (rangeNum[3].value.length === 3) {
-
-        isValidInput = (charCode >= 49 && charCode <= 57);
-    }*/
-  
     if (!isValidInput) {
 
         event.preventDefault();
@@ -295,83 +254,6 @@ rangeNum[3].addEventListener('keypress', function(event) {
     }
 
 });
-
-
-
-
-/*const checkSample = (domElement, len) => {
-
-    //const inputValue = domElement;
-
-    domElement.addEventListener('keypress', function(event) {
-  
-           const charCode = event.charCode;
-
-           const isValidInput = (charCode >= 48 && charCode <= 57) || charCode === 44;
-
-           
-           if (!isValidInput) {
-               event.preventDefault();
-           }
-       });
-
-}
-
-
-   /* else if (flag === 1) {
-
-
-        inputValue.addEventListener('keypress', function(event) {
-         // Получаем введенный символ
-            const charCode = event.charCode;
-
-            // Проверяем, является ли введенный символ цифрой от 0 до 9 или запятой
-            const isValidInput = (charCode >= 48 && charCode <= 57) || charCode === 44;
-
-            // Если ввод не является допустимым, отменяем его
-            if (!isValidInput) {
-                event.preventDefault();
-            }
-        });
-
-//onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 44"
-
-        /*if (len === 1) {
-
-            newValue = inputValue.substr(0, 4).replace(/^0/, '');
-            //newValue = inputValue.substr(0, 4).replace(/,/, '');
-            console.log('11')
-
-        }
-        /*else if (len === 2) {
-
-            newValue = inputValue.substr(0, len).replace(/\d/, '');
-        
-        }
-        else if (len === 3) {
-
-            newValue = inputValue.substr(0, len).replace(/\d/, '');
-            console.log('33')
-        
-        } 
-        else if (len === 4) {
-
-            newValue = inputValue.replace(/,/, '').substr(0, 4);
-        
-        }
-        else if (len === 5) {
-
-            newValue = inputValue.substr(0, 4);
-        
-        }
-        
-    }
-
-
-    return newValue;
-    
-}*/
-
 
 
 themeButton.addEventListener("click", () => {
