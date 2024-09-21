@@ -9,6 +9,11 @@ const infoYellow = document.querySelector('.info__yellow')
 
 const rangeIcon = document.querySelectorAll('.range__icon');
 
+const themeButton = document.querySelector('.theme__btn')
+const themeCircle = document.querySelector('.theme__circle')
+
+const body = document.querySelector('body') 
+const wrapper = document.querySelector('.wrapper') 
 
 const updateValue = (firstElement, secondElement, thirdElement) => {
 
@@ -366,5 +371,19 @@ rangeNum[3].addEventListener('keypress', function(event) {
     return newValue;
     
 }*/
+
+
+
+themeButton.addEventListener("click", () => {
+    
+    themeCircle.classList.toggle('theme__circle-light')
+    themeCircle.classList.toggle('theme__circle-night')
+    body.classList.toggle('body-night')
+    wrapper.classList.toggle('wrapper-night')
+    themeButton.classList.toggle('theme__btn-night')
+    rangeNum.forEach((v,i) => {rangeNum[i].classList.toggle('range__num-night')})
+    
+})
+
 
 

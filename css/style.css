@@ -45,7 +45,8 @@ body {
     min-height: 100vh;
     background-color: #e6e6e6;
     font-family: Arial, Helvetica, sans-serif;
-   
+    position: relative;
+    transition: all ease-in 0.3s;
 }
 
 .wrapper {
@@ -57,6 +58,7 @@ body {
     flex-wrap: wrap;
     flex: 0 1 900px;
     justify-content: center;
+    transition: all ease-in 0.3s;
 }
 
 .wrapper__header {
@@ -68,8 +70,6 @@ body {
     margin: 10px 0 0 0;
     min-width: 350px;
     text-align: center;
-    
-
 }
 
 .range {
@@ -265,7 +265,7 @@ input[type="number"]::-webkit-inner-spin-button {
         
     }
     .wrapper {
-        margin: 100px auto 0;
+        margin: 140px auto 0;
         flex: 1 1 500px;
         min-height: 900px;
     
@@ -298,4 +298,67 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 17px;
     }
     
+}
+
+
+.theme {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    width: 60px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme__btn {
+    width: 90%;
+    height: 40%;
+    position: relative;
+    border: #000000 solid;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.theme__circle {
+    position: absolute;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.theme__circle-light {
+    left: 1px;
+    transition: all ease-in 0.3s;
+}
+
+.theme__circle-night {
+    right: 1px;
+    transition: all ease-in 0.3s;
+    background-color: #ffffff;
+}
+
+.body-night {
+    background-color: #1f1f1f;
+    color: #e8eaed;
+    transition: all ease-in 0.3s;
+}
+
+.wrapper-night {
+    background-color: #303134;
+    transition: all ease-in 0.3s;
+}
+
+.range__num-night {
+    background-color: #1f1f1f;
+    color: #e6e6e6;
+}
+
+.theme__btn-night {
+    border: #ffffff solid;
+    background-color: #1f1f1f;
 }
