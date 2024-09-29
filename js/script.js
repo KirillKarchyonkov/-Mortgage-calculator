@@ -35,15 +35,11 @@ const updateValue = (firstElement, secondElement, thirdElement) => {
 
                     secondElement.value = parseInt(removeSpace(firstElement.value));
                     firstElement.value = getTriads(parseInt(secondElement.value));
-                    rangePersent.innerHTML = ((parseInt(rangeNum[1].value) / parseInt(rangeNum[0].value)) * 100).toFixed(2) + " %"
-                
             }
             else if ((firstElement === rangeIn[0]) || (firstElement === rangeIn[1])) {
 
                 secondElement.value = getTriads(parseInt(firstElement.value));
                 firstElement.value = parseInt(removeSpace(secondElement.value));
-                rangePersent.innerHTML =  ((parseInt(rangeIn[1].value) / parseInt(rangeIn[0].value)) * 100).toFixed(2) + " %"
-
             }
             else if (firstElement === rangeNum[2]) {
 
@@ -135,6 +131,8 @@ const updateValue = (firstElement, secondElement, thirdElement) => {
           
             thirdElement.style.width = Math.round((parseFloat(removeSpace(secondElement.value)) - parseFloat(removeSpace(secondElement.min))) / (parseFloat(removeSpace(secondElement.max)) - parseFloat(removeSpace(secondElement.min))) * 100)  + "%";
             thirdElement.style.width = Math.round((parseFloat(removeSpace(firstElement.value)) - parseFloat(removeSpace(firstElement.min))) / (parseFloat(removeSpace(firstElement.max)) - parseFloat(removeSpace(firstElement.min))) * 100)  + "%";
+
+            rangePersent.innerHTML = parseInt(rangeIn[0].value) ? ((parseInt(rangeIn[1].value) / parseInt(rangeIn[0].value)) * 100).toFixed(2) + " %" : ("0.00 %")
 
             calculation();
   
